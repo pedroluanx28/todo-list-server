@@ -1,5 +1,5 @@
 - Clone this project: `git clone https://github.com/pedroluanx28/todo-list-server.git`
-- configure tour .env with your Database
+- configure your .env with your Database
 - Install dependencies: `composer install`
 - run migrations and key: `php artisan migrate` `php artisan key:generate`
 - run this project on port 8000: `php artisan serve --port=8000`
