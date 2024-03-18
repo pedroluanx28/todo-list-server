@@ -12,7 +12,8 @@ class Todo extends Model
     protected $fillable = [
         'title',
         'checked',
-        'user_id'
+        'user_id',
+        'priority'
     ];
 
     public function user()

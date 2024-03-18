@@ -12,7 +12,9 @@ class TodosController extends Controller
      */
     public function index()
     {
-        $todos = Todo::where('user_id', auth()->id())->with('user')->paginate();
+        $todos = Todo::where('user_id', auth()->id())
+            ->orderByDesc("priority")
+            ->paginate(20);
 
         return $todos;
     }
