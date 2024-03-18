@@ -12,7 +12,7 @@ class TodosController extends Controller
      */
     public function index()
     {
-        $todos = Todo::paginate();
+        $todos = Todo::where('user_id', auth()->id())->with('user')->paginate();
 
         return $todos;
     }
@@ -23,6 +23,8 @@ class TodosController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+
+        $data['user_id'] = auth()->id();
 
         Todo::create($data);
 
