@@ -13,7 +13,9 @@ class Todo extends Model
         'title',
         'checked',
         'user_id',
-        'priority'
+        'priority',
+        'initial_date',
+        'final_date',
     ];
 
     public function user()

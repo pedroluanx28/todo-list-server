@@ -24,8 +24,8 @@ class AuthController extends Controller
         $user = User::where('email', $request->email)->first();
         if (!$user || !Hash::check($request->password, $user->password)) {
             return response()->json([
-                'error' => 'Tuas coisas estão erradas aí meu parceiro'
-            ]);
+                'error' => 'Credenciais inválidas, tente novamente.'
+            ], 422);
         }
 
         $user->tokens()->delete();

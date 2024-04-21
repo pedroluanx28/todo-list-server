@@ -27,10 +27,10 @@ class TodosController extends Controller
         $data = $request->all();
 
         $data['user_id'] = auth()->id();
+        
+        $result = Todo::create($data);
 
-        Todo::create($data);
-
-        return $data;
+        return $result;
     }
 
     /**
